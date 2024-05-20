@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/GameStart.unity
+    guid: 0a6f4372b95afd24e8e19919a9056dcd
+  - enabled: 1
+    path: Assets/Scenes/Round.unity
+    guid: ee367cbf1126ee04eaea1f208ff2af64
+  - enabled: 1
+    path: Assets/Scenes/RoundEnd.unity
+    guid: 061a6eb1b9460df4b9450b408873cbf4
+  - enabled: 1
+    path: Assets/Scenes/ShowData.unity
+    guid: a0f8b8345cc379f4a86cda7fa8ab47bd
+  - enabled: 1
+    path: Assets/Scenes/Dice.unity
+    guid: 7874422bef687464280ab12b879271e7
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 6d5ee4d5b9ae3e84989d85ebfa32fd47
+  m_configObjects: {}
