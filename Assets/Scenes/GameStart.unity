@@ -777,8 +777,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -503, y: -367}
-  m_SizeDelta: {x: 436.6854, y: 97.4781}
+  m_AnchoredPosition: {x: -503, y: -368.43567}
+  m_SizeDelta: {x: 320, y: 248.2177}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1168452400
 MonoBehaviour:
@@ -801,7 +801,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.3132075, g: 0.3132075, b: 0.3132075, a: 0}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.3137255, g: 0.3137255, b: 0.3137255, a: 1}
     m_PressedColor: {r: 0.2679245, g: 0.2679245, b: 0.2679245, a: 1}
     m_SelectedColor: {r: 0.26666668, g: 0.26666668, b: 0.26666668, a: 1}
@@ -856,11 +856,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ad1651a3010d522439382b4f77bdd1f4, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -926,8 +926,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54.5, y: -367}
-  m_SizeDelta: {x: 546.31, y: 97.4781}
+  m_AnchoredPosition: {x: 23.900402, y: -368.43}
+  m_SizeDelta: {x: 375.349, y: 248.22}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1218668765
 MonoBehaviour:
@@ -965,7 +965,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.3132075, g: 0.3132075, b: 0.3132075, a: 0}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.3137255, g: 0.3137255, b: 0.3137255, a: 1}
     m_PressedColor: {r: 0.2679245, g: 0.2679245, b: 0.2679245, a: 1}
     m_SelectedColor: {r: 0.26666668, g: 0.26666668, b: 0.26666668, a: 1}
@@ -1020,8 +1020,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ad1651a3010d522439382b4f77bdd1f4, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1075,8 +1075,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 625, y: -367}
-  m_SizeDelta: {x: 436.6854, y: 97.4781}
+  m_AnchoredPosition: {x: 547.7178, y: -368.43}
+  m_SizeDelta: {x: 320, y: 248.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1370729426
 MonoBehaviour:
@@ -1114,7 +1114,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.3132075, g: 0.3132075, b: 0.3132075, a: 0}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.3137255, g: 0.3137255, b: 0.3137255, a: 1}
     m_PressedColor: {r: 0.2679245, g: 0.2679245, b: 0.2679245, a: 1}
     m_SelectedColor: {r: 0.26666668, g: 0.26666668, b: 0.26666668, a: 1}
@@ -1169,8 +1169,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ad1651a3010d522439382b4f77bdd1f4, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1453,7 +1453,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Instructions
+  m_text: 'Rules
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1516,7 +1518,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 2.0061188, y: 0, z: 0, w: 0}
+  m_margin: {x: 2.0061188, y: 1.7854309, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using TMPro.Examples;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -9,23 +12,25 @@ public class Instructions : MonoBehaviour
 {
     public GameObject[] panels;
     [SerializeField] GameObject btn;
+    [SerializeField] Button bt;
     int clicked = 1;
     // Start is called before the first frame update
     void Start()
     {
-        
+        bt.onClick.AddListener(Deselect);
+    }
+    void Deselect()
+    {
+        // Deselect the button
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void LoadMainScreen()
     {
         SceneManager.LoadScene("GameStart");
     }
+    
     public void SceneChange()
     {
         SceneManager.LoadScene("Instructions");
