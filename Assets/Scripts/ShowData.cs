@@ -1,34 +1,39 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ShowData : MonoBehaviour
 {
+
+    public Sprite cooperate;
+    public Sprite defect;
+
     public TextMeshProUGUI roundNumber;
     public TextMeshProUGUI player1Region;
     public TextMeshProUGUI player2Region;
 
     public TextMeshProUGUI card1Name;
-    public TextMeshProUGUI card1Player1Choice;
-    public TextMeshProUGUI card1Player2Choice;
+    public Image card1Player1Image;
+    public Image card1Player2Image;
     public TextMeshProUGUI result1;
 
 
     public TextMeshProUGUI card2Name;
-    public TextMeshProUGUI card2Player1Choice;
-    public TextMeshProUGUI card2Player2Choice;
+    public Image card2Player1Image;
+    public Image card2Player2Image;
     public TextMeshProUGUI result2;
 
 
     public TextMeshProUGUI card3Name;
-    public TextMeshProUGUI card3Player1Choice;
-    public TextMeshProUGUI card3Player2Choice;
+    public Image card3Player1Image;
+    public Image card3Player2Image;
     public TextMeshProUGUI result3;
 
 
     public TextMeshProUGUI card4Name;
-    public TextMeshProUGUI card4Player1Choice;
-    public TextMeshProUGUI card4Player2Choice;
+    public Image card4Player1Image;
+    public Image card4Player2Image;
     public TextMeshProUGUI result4;
 
     public TextMeshProUGUI roundScore1;
@@ -47,17 +52,17 @@ public class ShowData : MonoBehaviour
         card3Name.text = cards[2].name;
         card4Name.text = cards[3].name;
 
-        card1Player1Choice.text = GameManager.choices[0, 0] == 1 ? "COOPERATE" : "DEFECT";
-        card1Player2Choice.text = GameManager.choices[0, 1] == 1 ? "COOPERATE" : "DEFECT";
+        SetImage(GameManager.choices[0, 0] == 1 ? "COOPERATE" : "DEFECT", card1Player1Image);
+        SetImage(GameManager.choices[0, 1] == 1 ? "COOPERATE" : "DEFECT", card1Player2Image);
 
-        card2Player1Choice.text = GameManager.choices[1, 0] == 1 ? "COOPERATE" : "DEFECT";
-        card2Player2Choice.text = GameManager.choices[1, 1] == 1 ? "COOPERATE" : "DEFECT";
+        SetImage(GameManager.choices[1, 0] == 1 ? "COOPERATE" : "DEFECT", card2Player1Image);
+        SetImage(GameManager.choices[1, 1] == 1 ? "COOPERATE" : "DEFECT", card2Player2Image);
 
-        card3Player1Choice.text = GameManager.choices[2, 0] == 1 ? "COOPERATE" : "DEFECT";
-        card3Player2Choice.text = GameManager.choices[2, 1] == 1 ? "COOPERATE" : "DEFECT";
+        SetImage(GameManager.choices[2, 0] == 1 ? "COOPERATE" : "DEFECT", card3Player1Image);
+        SetImage(GameManager.choices[2, 1] == 1 ? "COOPERATE" : "DEFECT", card3Player2Image);
 
-        card4Player1Choice.text = GameManager.choices[3, 0] == 1 ? "COOPERATE" : "DEFECT";
-        card4Player2Choice.text = GameManager.choices[3, 1] == 1 ? "COOPERATE" : "DEFECT";
+        SetImage(GameManager.choices[3, 0] == 1 ? "COOPERATE" : "DEFECT", card4Player1Image);
+        SetImage(GameManager.choices[3, 1] == 1 ? "COOPERATE" : "DEFECT", card4Player2Image);
 
         result1.text=GameManager.currentRoundScore[0,0].ToString("F1")+" - "+GameManager.currentRoundScore[0,1].ToString("F1");
         result2.text=GameManager.currentRoundScore[1,0].ToString("F1")+" - "+GameManager.currentRoundScore[1,1].ToString("F1");
@@ -77,7 +82,17 @@ public class ShowData : MonoBehaviour
         totalScore2.text = GameManager.player2Score.ToString("F1");
 
     }
-
+    public void SetImage(string txt, Image img)
+    {
+        if (txt == "COOPERATE")
+        {
+            img.sprite = cooperate;
+        }
+        else
+        {
+            img.sprite = defect;
+        }
+    }
     public void Next(){
         SceneManager.LoadScene("Dice");
     }
