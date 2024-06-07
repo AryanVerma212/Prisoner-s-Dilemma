@@ -14,6 +14,10 @@ public class GameStart : MonoBehaviour
         SceneManager.LoadScene("Round");
     }
 
+    public void InstructionsPanel()
+    {
+        SceneManager.LoadScene("Instructions");
+    }
     public void QuitGame(){
         Application.Quit();
     }
