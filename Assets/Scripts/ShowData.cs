@@ -94,6 +94,6 @@ public class ShowData : MonoBehaviour
         }
     }
     public void Next(){
-        SceneManager.LoadScene("Dice1");
+        SceneManager.LoadScene("Dice");
     }
 }

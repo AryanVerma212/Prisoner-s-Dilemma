@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Round : MonoBehaviour
 {
     int[,] choices = new int[4,2];
+    public Image bgIMG;
     public new GameObject camera;
     public TextMeshProUGUI roundNumberText;
     public TextMeshProUGUI playerNumberText;
@@ -55,10 +56,18 @@ public class Round : MonoBehaviour
         cardName.text = cards[cardNumber].name;
         cardDescription1.text = cards[cardNumber].description1;
         cardDescription2.text = cards[cardNumber].description2;
-        if(playerTurn==1)
-            camera.GetComponent<Camera>().backgroundColor = new Color(0.694f,0.478f,0.208f);
-        else if(playerTurn==2)
-            camera.GetComponent<Camera>().backgroundColor = new Color(0.22f,0.31f,0.675f);
+        if (playerTurn == 1)
+        {
+            camera.GetComponent<Camera>().backgroundColor = new Color(0.694f, 0.478f, 0.208f);
+            playerNumberText.color = player1RegionText.color;
+            bgIMG.color = player1RegionText.color;
+        }
+        else if (playerTurn == 2)
+        {
+            camera.GetComponent<Camera>().backgroundColor = new Color(0.22f, 0.31f, 0.675f);
+            playerNumberText.color = player2RegionText.color;
+            bgIMG.color = player2RegionText.color;
+        }
         result.text = "Player "+playerTurn+" must choose to COOPERATE or DEFECT";
     }
 
