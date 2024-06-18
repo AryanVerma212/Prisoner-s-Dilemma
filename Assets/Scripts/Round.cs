@@ -31,15 +31,16 @@ public class Round : MonoBehaviour
     Card[] cards = new Card[4];
 
     void Start(){
-        for (int i=0;i<4;i++) cards[i] = GameManager.cards[(GameManager.roundNumber - 1) * 4 + i];
+        for (int i=0;i<4;i++) cards[i] = GameManager.cards[4*(GameManager.roundNumber-1)+i];
         GameManager.currentRoundCards = cards;
         //roundCompleted = false;
         playerTurn = 1;
         cardNumber = 0;
         roundNumber = GameManager.roundNumber;
         updateData();
-        player1RegionText.text = GameManager.player1Regions[roundNumber-1].name;
-        player2RegionText.text = GameManager.player2Regions[roundNumber-1].name;
+        player1RegionText.text = GameManager.player1Region.name;
+        player2RegionText.text = GameManager.player2Region.name;
+        
     }
 
     private void updateData(){

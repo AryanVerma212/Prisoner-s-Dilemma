@@ -15,48 +15,66 @@ public class RoundEnd : MonoBehaviour
     {
         choices=GameManager.choices;
         roundNumber=GameManager.roundNumber;
-        //Debug.Log(roundNumber);
-        calculateStuff();
+        CalculateStuff();
         roundNumberText.text = "Round "+roundNumber+" Completed";
         showResult();
-        player1Region.text = GameManager.player1Regions[roundNumber-1].name;
-        player2Region.text = GameManager.player2Regions[roundNumber-1].name;
+        player1Region.text = GameManager.player1Region.name;
+        player2Region.text = GameManager.player2Region.name;
     }
-    private void calculateStuff(){
+    private void CalculateStuff(){
         Card[] cards=new Card[4];
         for(int i=0;i<4;i++)
             cards[i]=GameManager.cards[(roundNumber-1)*4+i];
 
-        float player1Score=0, player2Score=0;
-        float[,] currentRoundScore=new float[4,2];
+        int player1Water=0, player2Water=0;
+        int player1Infra=0, player2Infra=0;
+        int[,] currentRoundWater=new int[4,2];
+        int[,] currentRoundInfra=new int[4,2];
         for(int i=0;i<4;i++){
-            int player1Weight=GameManager.player1Regions[roundNumber-1].weights[cards[i].id];
-            int player2Weight=GameManager.player2Regions[roundNumber-1].weights[cards[i].id];
+            int player1Weight=GameManager.player1Region.weights[cards[i].id];
+            int player2Weight=GameManager.player2Region.weights[cards[i].id];
             if(choices[i,0]==1 && choices[i,1]==1){
-                currentRoundScore[i,0]=player1Weight;
-                currentRoundScore[i,1]=player2Weight;
+                currentRoundWater[i,0]=10;
+                currentRoundWater[i,1]=10;
+                currentRoundInfra[i,0]=player1Weight;
+                currentRoundInfra[i,1]=player2Weight;
             }
             else if(choices[i,0]==1 && choices[i,1]==-1){
-                currentRoundScore[i,0]=0;
-                currentRoundScore[i,1]=player2Weight*2;
+                currentRoundWater[i,0]=0;
+                currentRoundWater[i,1]=20;
+                currentRoundInfra[i,0]=2*player2Weight;
+                currentRoundInfra[i,1]=0;
             }
             else if(choices[i,0]==-1 && choices[i,1]==1){
-                currentRoundScore[i,0]=player1Weight*2;
-                currentRoundScore[i,1]=0;
+                currentRoundWater[i,0]=20;
+                currentRoundWater[i,1]=0;
+                currentRoundInfra[i,0]=0;
+                currentRoundInfra[i,1]=2*player1Weight;
             }
             else if(choices[i,0]==-1 && choices[i,1]==-1){
-                currentRoundScore[i,0]=player1Weight / 2.0f;
-                currentRoundScore[i,1]=player2Weight / 2.0f;
+                currentRoundWater[i,0]=5;
+                currentRoundWater[i,1]=5;
+                currentRoundInfra[i,0]=0;
+                currentRoundInfra[i,1]=0;
                 
             }
         }
         for(int i=0;i<4;i++){
-            player1Score+=currentRoundScore[i,0];
-            player2Score+=currentRoundScore[i,1];
+            player1Water+=currentRoundWater[i,0];
+            player2Water+=currentRoundWater[i,1];
+            player1Infra+=currentRoundInfra[i,0];
+            player2Infra+=currentRoundInfra[i,1];
         }
-        GameManager.currentRoundScore=currentRoundScore;
-        GameManager.player1Score+=player1Score;
-        GameManager.player2Score+=player2Score;
+        GameManager.player1Score+=player1Water;
+        GameManager.player2Score+=player2Water;
+        GameManager.player1Region.groundwater-=player1Water;
+        GameManager.player2Region.groundwater-=player2Water;
+        GameManager.player1Infra+=player1Infra;
+        GameManager.player2Infra+=player2Infra;
+
+        if(GameManager.player1Region.groundwater<0 || GameManager.player2Region.groundwater<0){
+            //Game Finished
+        }
     }
     private void showResult(){
         player1ScoreText.text = GameManager.player1Score.ToString("F1");
