@@ -19,6 +19,8 @@ public class Round : MonoBehaviour
 
     public TextMeshProUGUI player1RegionText;
     public TextMeshProUGUI player2RegionText;
+    public TextMeshProUGUI player1ScoreText;
+    public TextMeshProUGUI player2ScoreText;
 
     public Button cooperateButton;
     public Button defectButton;
@@ -40,6 +42,8 @@ public class Round : MonoBehaviour
         updateData();
         player1RegionText.text = GameManager.player1Region.name;
         player2RegionText.text = GameManager.player2Region.name;
+        player1ScoreText.text = "Score: " + GameManager.player1Score;
+        player2ScoreText.text = "Score: " + GameManager.player2Score;
         
     }
 
@@ -89,7 +93,7 @@ public class Round : MonoBehaviour
     {
         cooperateButton.interactable = false;
         defectButton.interactable = false;
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(0.5f);
         updateData();
         cooperateButton.interactable = true;
         defectButton.interactable = true;

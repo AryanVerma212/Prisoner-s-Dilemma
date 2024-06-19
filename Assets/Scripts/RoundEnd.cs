@@ -7,6 +7,10 @@ public class RoundEnd : MonoBehaviour
     public TextMeshProUGUI roundNumberText;
     public TextMeshProUGUI player1ScoreText;
     public TextMeshProUGUI player2ScoreText;
+    public TextMeshProUGUI player1Infra;
+    public TextMeshProUGUI player2Infra;
+    public TextMeshProUGUI player1Groundwater;
+    public TextMeshProUGUI player2Groundwater;
     public TextMeshProUGUI player1Region;
     public TextMeshProUGUI player2Region;
     private int roundNumber;
@@ -20,6 +24,10 @@ public class RoundEnd : MonoBehaviour
         showResult();
         player1Region.text = GameManager.player1Region.name;
         player2Region.text = GameManager.player2Region.name;
+        player1Infra.text = GameManager.player1Infra.ToString();
+        player2Infra.text = GameManager.player2Infra.ToString();
+        player1Groundwater.text = GameManager.player1Region.groundwater.ToString();
+        player2Groundwater.text = GameManager.player2Region.groundwater.ToString();
     }
     private void CalculateStuff(){
         Card[] cards=new Card[4];
@@ -71,14 +79,16 @@ public class RoundEnd : MonoBehaviour
         GameManager.player2Region.groundwater-=player2Water;
         GameManager.player1Infra+=player1Infra;
         GameManager.player2Infra+=player2Infra;
+        GameManager.currentRoundWater=currentRoundWater;
+        GameManager.currentRoundInfra=currentRoundInfra;
 
         if(GameManager.player1Region.groundwater<0 || GameManager.player2Region.groundwater<0){
-            //Game Finished
+            SceneManager.LoadScene("ZeroGW");
         }
     }
     private void showResult(){
-        player1ScoreText.text = GameManager.player1Score.ToString("F1");
-        player2ScoreText.text = GameManager.player2Score.ToString("F1");
+        player1ScoreText.text = GameManager.player1Score.ToString();
+        player2ScoreText.text = GameManager.player2Score.ToString();
     }
 
     public void showData(){

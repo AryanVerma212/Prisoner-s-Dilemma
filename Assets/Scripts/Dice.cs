@@ -18,6 +18,9 @@ public class Dice : MonoBehaviour
     public TextMeshProUGUI player1Score;
     public TextMeshProUGUI player2Score;
 
+    public TextMeshProUGUI player1Infra;
+    public TextMeshProUGUI player2Infra;
+
     public Button rollButton;
     public Button nextButton;
     int roundNumber=GameManager.roundNumber;
@@ -60,6 +63,8 @@ public class Dice : MonoBehaviour
 
         player1Score.text = GameManager.player1Score.ToString();
         player2Score.text = GameManager.player2Score.ToString();
+        player1Infra.text = GameManager.player1Infra.ToString();
+        player2Infra.text = GameManager.player2Infra.ToString();
 
         nextButton.interactable=true;
     }

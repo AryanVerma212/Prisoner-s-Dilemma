@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour{
     public static int player2Infra = 0;
 
 
-    
-
     public static Card RH=new Card(0, "Rooftop Rainwater Harvesting","Your Roof, Your Water Source",
                                         "Turn your rooftop into a mini water reservoir! This technique collects rainwater from your roof and stores it in tanks for later use. Think of it like a personal rainwater barrel, providing a sustainable water source.");
     public static Card card2=new Card(1, "Spring Revival","Spring Recharge", 
@@ -50,8 +48,8 @@ public class GameManager : MonoBehaviour{
 
     public static Set set1 = new Set(Punjab, Kerala, new Card[]{CNL,SYR,FLD,MZP,RH,FLD,IRR,CNL,GR,MZP,CNL,SYR,
                                                                 IRR,FLD,SYR,RH,MZP,GR,CNL,SYR,IRR,GR,RH,FLD});
-    public static Set set2 = new Set(Himachal, Karnataka, new Card[]{GR,ICE,IRR,RH,GR,ICE,IRR,RH,GR,ICE,IRR,RH,
-                                                                    GR,ICE,IRR,RH,GR,ICE,IRR,RH,GR,ICE,IRR,RH,});
+    public static Set set2 = new Set(Himachal, Karnataka, new Card[]{GR,IRR,SYR,ICE,RH,SYR,ICE,CNL,IRR,MZP,RH,GR,
+                                                                    MZP,GR,CNL,IRR,CNL,ICE,RH,MZP,RH,SYR,MZP,IRR});
 
     //public static Set set3 = new Set(Kerala, Assam, new Card[]{RH,SYR,MZP,IRR,FLD,GR,CNL}, new Card[]{IRR,GR,CNL,SYR,RH,MZP,FLD});
 
@@ -62,5 +60,6 @@ public class GameManager : MonoBehaviour{
     public static Region player2Region;
     public static int[,] choices;
     public static Card[] currentRoundCards;
-    public static int[,] currentRoundScore;
+    public static int[,] currentRoundWater;
+    public static int[,] currentRoundInfra;
 }
