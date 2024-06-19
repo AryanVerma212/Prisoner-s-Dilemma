@@ -26,8 +26,8 @@ public class RoundEnd : MonoBehaviour
         player2Region.text = GameManager.player2Region.name;
         player1Infra.text = GameManager.player1Infra.ToString();
         player2Infra.text = GameManager.player2Infra.ToString();
-        player1Groundwater.text = GameManager.player1Region.groundwater.ToString();
-        player2Groundwater.text = GameManager.player2Region.groundwater.ToString();
+        player1Groundwater.text = GameManager.player1Groundwater.ToString();
+        player2Groundwater.text = GameManager.player2Groundwater.ToString();
     }
     private void CalculateStuff(){
         Card[] cards=new Card[4];
@@ -75,14 +75,14 @@ public class RoundEnd : MonoBehaviour
         }
         GameManager.player1Score+=player1Water;
         GameManager.player2Score+=player2Water;
-        GameManager.player1Region.groundwater-=player1Water;
-        GameManager.player2Region.groundwater-=player2Water;
+        GameManager.player1Groundwater-=player1Water;
+        GameManager.player2Groundwater-=player2Water;
         GameManager.player1Infra+=player1Infra;
         GameManager.player2Infra+=player2Infra;
         GameManager.currentRoundWater=currentRoundWater;
         GameManager.currentRoundInfra=currentRoundInfra;
 
-        if(GameManager.player1Region.groundwater<0 || GameManager.player2Region.groundwater<0){
+        if(GameManager.player1Groundwater<0 || GameManager.player2Groundwater<0){
             SceneManager.LoadScene("ZeroGW");
         }
     }

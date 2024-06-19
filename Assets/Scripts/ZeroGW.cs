@@ -16,19 +16,19 @@ public class ZeroGW : MonoBehaviour
     void Start()
     {
         if(GameManager.player1Groundwater<0){
-            loser.text = "Player 1 is out of groundwater";
+            loser.text = player1Region.name + "is out of groundwater";
             winner.text = "Player 2";
         }
         else{
-            loser.text = "Player 2 is out of groundwater";
+            loser.text = player2Region.name + "is out of groundwater";
             winner.text = "Player 1";
         }
         player1ScoreText.text = GameManager.player1Score.ToString();
         player2ScoreText.text = GameManager.player2Score.ToString();
         player1Region.text = GameManager.player1Region.name;
         player2Region.text = GameManager.player2Region.name;
-        originalGW.text = "Original GW:" + GameManager.player1Region.groundwater.ToString();
-        extractedWater.text = "Extracted Water: "+ GameManager.player1Score.ToString();
+        originalGW.text = "Original GW: " + GameManager.player1Region.groundwater.ToString();
+        extractedWater.text = "Extracted Water: "+ (GameManager.player1Score-GameManager.initialScore).ToString();
     }
 
     public void Restart(){

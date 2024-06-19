@@ -3,11 +3,12 @@ using System;
 
 public class GameManager : MonoBehaviour{
     public static int roundNumber = 1;
-    public static int totalRounds = 6;
+    public static int totalRounds = 2;
+    public static int initialScore = 200;
     public static int player1Groundwater = 0;
     public static int player2Groundwater = 0;
-    public static int player1Score = 200;
-    public static int player2Score = 200;
+    public static int player1Score = initialScore;
+    public static int player2Score = initialScore;
     public static int player1Infra = 0;
     public static int player2Infra = 0;
 

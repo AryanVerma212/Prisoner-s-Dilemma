@@ -93,7 +93,7 @@ public class Round : MonoBehaviour
     {
         cooperateButton.interactable = false;
         defectButton.interactable = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2.0f);
         updateData();
         cooperateButton.interactable = true;
         defectButton.interactable = true;
