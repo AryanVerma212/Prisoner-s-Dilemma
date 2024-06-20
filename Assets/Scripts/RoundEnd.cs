@@ -33,7 +33,6 @@ public class RoundEnd : MonoBehaviour
         Card[] cards=new Card[4];
         for(int i=0;i<4;i++)
             cards[i]=GameManager.cards[(roundNumber-1)*4+i];
-
         int player1Water=0, player2Water=0;
         int player1Infra=0, player2Infra=0;
         int[,] currentRoundWater=new int[4,2];
@@ -50,14 +49,14 @@ public class RoundEnd : MonoBehaviour
             else if(choices[i,0]==1 && choices[i,1]==-1){
                 currentRoundWater[i,0]=0;
                 currentRoundWater[i,1]=20;
-                currentRoundInfra[i,0]=2*player2Weight;
+                currentRoundInfra[i,0]=2*player1Weight;
                 currentRoundInfra[i,1]=0;
             }
             else if(choices[i,0]==-1 && choices[i,1]==1){
                 currentRoundWater[i,0]=20;
                 currentRoundWater[i,1]=0;
                 currentRoundInfra[i,0]=0;
-                currentRoundInfra[i,1]=2*player1Weight;
+                currentRoundInfra[i,1]=2*player2Weight;
             }
             else if(choices[i,0]==-1 && choices[i,1]==-1){
                 currentRoundWater[i,0]=5;
