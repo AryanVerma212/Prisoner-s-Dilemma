@@ -70,15 +70,15 @@ public class ShowData : MonoBehaviour
         SetImage(GameManager.choices[3, 0] == 1 ? "COOPERATE" : "DEFECT", card4Player1Image);
         SetImage(GameManager.choices[3, 1] == 1 ? "COOPERATE" : "DEFECT", card4Player2Image);
 
-        waterResult1.text=GameManager.currentRoundWater[0,0].ToString()+"   "+GameManager.currentRoundWater[0,1].ToString();
-        waterResult2.text=GameManager.currentRoundWater[1,0].ToString()+"   "+GameManager.currentRoundWater[1,1].ToString();
-        waterResult3.text=GameManager.currentRoundWater[2,0].ToString()+"   "+GameManager.currentRoundWater[2,1].ToString();
-        waterResult4.text=GameManager.currentRoundWater[3,0].ToString()+"   "+GameManager.currentRoundWater[3,1].ToString();
+        waterResult1.text=GameManager.currentRoundWater[0,0].ToString()+" - "+GameManager.currentRoundWater[0,1].ToString();
+        waterResult2.text=GameManager.currentRoundWater[1,0].ToString()+" - "+GameManager.currentRoundWater[1,1].ToString();
+        waterResult3.text=GameManager.currentRoundWater[2,0].ToString()+" - "+GameManager.currentRoundWater[2,1].ToString();
+        waterResult4.text=GameManager.currentRoundWater[3,0].ToString()+" - "+GameManager.currentRoundWater[3,1].ToString();
 
-        infraResult1.text=GameManager.currentRoundInfra[0,0].ToString()+"   "+GameManager.currentRoundInfra[0,1].ToString();
-        infraResult2.text=GameManager.currentRoundInfra[1,0].ToString()+"   "+GameManager.currentRoundInfra[1,1].ToString();
-        infraResult3.text=GameManager.currentRoundInfra[2,0].ToString()+"   "+GameManager.currentRoundInfra[2,1].ToString();
-        infraResult4.text=GameManager.currentRoundInfra[3,0].ToString()+"   "+GameManager.currentRoundInfra[3,1].ToString();
+        infraResult1.text=GameManager.currentRoundInfra[0,0].ToString()+" - "+GameManager.currentRoundInfra[0,1].ToString();
+        infraResult2.text=GameManager.currentRoundInfra[1,0].ToString()+" - "+GameManager.currentRoundInfra[1,1].ToString();
+        infraResult3.text=GameManager.currentRoundInfra[2,0].ToString()+" - "+GameManager.currentRoundInfra[2,1].ToString();
+        infraResult4.text=GameManager.currentRoundInfra[3,0].ToString()+" - "+GameManager.currentRoundInfra[3,1].ToString();
 
         float score1 = 0, score2 = 0;
         for (int i = 0; i < 4; i++)
