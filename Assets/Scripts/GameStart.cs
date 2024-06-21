@@ -19,7 +19,7 @@ public class GameStart : MonoBehaviour
     }
 
     public void InstructionsPanel(){
-        SceneManager.LoadScene("Instructions");
+        SceneManager.LoadScene("GameComponents");
     }
     public void QuitGame(){
         Application.Quit();

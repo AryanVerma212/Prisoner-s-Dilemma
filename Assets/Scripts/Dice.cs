@@ -8,6 +8,8 @@ public class Dice : MonoBehaviour
 {
     //public TextMeshProUGUI diceText;
     public GameObject[] canvas;
+    public Sprite[] BackgroundSprites;
+    public Image BackgroundImage;
     public TextMeshProUGUI diceNumber;
     public TextMeshProUGUI player1;
     public TextMeshProUGUI player2;
@@ -41,8 +43,20 @@ public class Dice : MonoBehaviour
         canvas[1].SetActive(false);
     }
 
-    private void updateStuff(){
-
+    private void updateStuff()
+    {
+        if(roundNumber == 1 || roundNumber == 2)
+        {
+            BackgroundImage.sprite = BackgroundSprites[0];
+        }
+        else if(roundNumber == 3 || roundNumber == 4)
+        {
+            BackgroundImage.sprite = BackgroundSprites[1];
+        }
+        else if(roundNumber==5 || roundNumber==6)
+        {
+            BackgroundImage.sprite = BackgroundSprites[2];
+        }
         System.Random random=new System.Random();
         int n=dice[roundNumber-1,random.Next(0,6)];
         Debug.Log("Disaster Intensity: " + n);

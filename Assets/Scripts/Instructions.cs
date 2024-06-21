@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class Instructions : MonoBehaviour
 {
     public GameObject[] panels;
-    [SerializeField] GameObject btn;
-    [SerializeField] GameObject btn2;
+    /*[SerializeField] GameObject btn;
+    [SerializeField] GameObject btn2;*/
     [SerializeField] Button bt;
     [SerializeField] Button bt2;
 
@@ -17,7 +17,7 @@ public class Instructions : MonoBehaviour
     {
         bt.onClick.AddListener(Deselect);
         bt2.onClick.AddListener(Deselect);
-        btn2.SetActive(false);
+        //btn2.SetActive(false);
     }
     void Deselect()
     {
@@ -37,32 +37,26 @@ public class Instructions : MonoBehaviour
     }
     public void OnContinuePressed()
     {
-        btn2.SetActive(true);
+        //btn2.SetActive(true);
         panels[clicked-1].SetActive(false);
         panels[clicked].SetActive(true);
         Debug.Log(clicked);
-        if(clicked == 4)
-        {
-            btn.SetActive(false);
-        }
-        if(clicked < panels.Length) 
+        if(clicked < panels.Length - 1) 
         {
             clicked++;
         }        
     }
     public void Back()
     {
-        if(clicked == 1)
+        if (clicked == 1)
         {
             SceneManager.LoadScene("GameStart");
         }
-        else if(clicked > 1)
-        panels[clicked-1].SetActive(false);
-        panels[clicked-2].SetActive(true);
-        Debug.Log("clicked back");
-        
-        if(clicked > 0) 
-        {
+        else if (clicked > 1) 
+        { 
+            panels[clicked - 1].SetActive(false);
+            panels[clicked - 2].SetActive(true);
+            Debug.Log("clicked back");
             clicked--;
         }
     }
