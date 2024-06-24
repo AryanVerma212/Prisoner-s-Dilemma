@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/GameStart.unity
     guid: 0a6f4372b95afd24e8e19919a9056dcd
   - enabled: 1
+    path: Assets/Scenes/HowToPlay.unity
+    guid: f0ea746790582ce48b75fe9ff2ccfe77
+  - enabled: 1
+    path: Assets/Scenes/GameComponents.unity
+    guid: 365916238eaf53342b173bd3cb6d3c8b
+  - enabled: 1
     path: Assets/Scenes/Round.unity
     guid: ee367cbf1126ee04eaea1f208ff2af64
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RoundEnd.unity
     guid: 061a6eb1b9460df4b9450b408873cbf4
   - enabled: 1
@@ -23,9 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ZeroGW.unity
     guid: 6d5ee4d5b9ae3e84989d85ebfa32fd47
-  - enabled: 1
-    path: Assets/Scenes/GameComponents.unity
-    guid: 365916238eaf53342b173bd3cb6d3c8b
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: c38efb0e2b9ded74ca9d4a6d1b5dbde6

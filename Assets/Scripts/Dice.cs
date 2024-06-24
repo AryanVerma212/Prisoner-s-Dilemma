@@ -9,6 +9,9 @@ public class Dice : MonoBehaviour
     //public TextMeshProUGUI diceText;
     public GameObject[] canvas;
     public Sprite[] BackgroundSprites;
+
+    public Sprite[] DiceOutputSprites;
+
     public Image BackgroundImage;
     public TextMeshProUGUI diceNumber;
     public TextMeshProUGUI player1;
@@ -23,8 +26,13 @@ public class Dice : MonoBehaviour
     public TextMeshProUGUI player1Infra;
     public TextMeshProUGUI player2Infra;
 
+    public TextMeshProUGUI P1Region;
+    public TextMeshProUGUI P2Region;
+
     public Button rollButton;
     public Button nextButton;
+    public Image diceOutput;
+    public Image diceOutput0;
     int roundNumber=GameManager.roundNumber;
 
     int[,] dice={{1,2,3,0,0,0},
@@ -59,8 +67,20 @@ public class Dice : MonoBehaviour
         }
         System.Random random=new System.Random();
         int n=dice[roundNumber-1,random.Next(0,6)];
+        if (n == 0)
+        {
+            diceOutput0.sprite = DiceOutputSprites[0];
+            diceOutput.gameObject.SetActive(false);
+        }
+        else
+        {
+            diceOutput.sprite = DiceOutputSprites[n];
+        }
         Debug.Log("Disaster Intensity: " + n);
+        
         diceNumber.text = n.ToString();
+        P1Region.text = GameManager.player1Region.name.Split(" ")[0];
+        P2Region.text = GameManager.player2Region.name.Split(" ")[0];
 
         player1.gameObject.SetActive(true);
         player2.gameObject.SetActive(true);
