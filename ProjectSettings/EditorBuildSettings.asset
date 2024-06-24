@@ -5,16 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/GameStart.unity
     guid: 0a6f4372b95afd24e8e19919a9056dcd
   - enabled: 1
     path: Assets/Scenes/Round.unity
     guid: ee367cbf1126ee04eaea1f208ff2af64
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RoundEnd.unity
     guid: 061a6eb1b9460df4b9450b408873cbf4
   - enabled: 1
@@ -29,9 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameComponents.unity
     guid: 365916238eaf53342b173bd3cb6d3c8b
-  - enabled: 1
-    path: Assets/Scenes/Dice1.unity
-    guid: 17c8480cd3ef2484dbdbe23be463e10c
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: c38efb0e2b9ded74ca9d4a6d1b5dbde6

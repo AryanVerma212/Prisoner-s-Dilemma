@@ -38,6 +38,10 @@ public class ScreenManager : MonoBehaviour
         Screen3.gameObject.SetActive(false);
         Screen4.gameObject.SetActive(true);
     }
+    public void HowToPlay()
+    {
+        SceneManager.LoadScene(7);
+    }
     public void Play()
     {
         SceneManager.LoadScene(1);
