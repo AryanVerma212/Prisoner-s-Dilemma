@@ -68,6 +68,19 @@ public class ShowData : MonoBehaviour
     int GroundWaterUsedInCurrentRoundP1;
     int GroundWaterUsedInCurrentRoundP2;
     private Card[] cards;
+
+    // Infra Efficiency
+    public TextMeshProUGUI infraEffP1R1;
+    public TextMeshProUGUI infraEffP2R1;
+
+    public TextMeshProUGUI infraEffP1R2;
+    public TextMeshProUGUI infraEffP2R2;
+
+    public TextMeshProUGUI infraEffP1R3;
+    public TextMeshProUGUI infraEffP2R3;
+
+    public TextMeshProUGUI infraEffP1R4;
+    public TextMeshProUGUI infraEffP2R4;
     void Start()
     {
         roundNumber.text = "Round " + GameManager.roundNumber + " Completed";
@@ -139,6 +152,14 @@ public class ShowData : MonoBehaviour
         player1Region.text = GameManager.player1Region.name.Split(' ')[0];
         player2Region.text = GameManager.player2Region.name.Split(' ')[0];
         //Debug.Log(player1Region.text);
+        infraEffP1R1.text = GameManager.player1Region.weights[GameManager.currentRoundCards[0].id].ToString();
+        infraEffP2R1.text = GameManager.player2Region.weights[GameManager.currentRoundCards[0].id].ToString();
+        infraEffP1R2.text = GameManager.player1Region.weights[GameManager.currentRoundCards[1].id].ToString();
+        infraEffP2R2.text = GameManager.player2Region.weights[GameManager.currentRoundCards[1].id].ToString();
+        infraEffP1R3.text = GameManager.player1Region.weights[GameManager.currentRoundCards[2].id].ToString();
+        infraEffP2R3.text = GameManager.player2Region.weights[GameManager.currentRoundCards[2].id].ToString();
+        infraEffP1R4.text = GameManager.player1Region.weights[GameManager.currentRoundCards[3].id].ToString();
+        infraEffP2R4.text = GameManager.player2Region.weights[GameManager.currentRoundCards[3].id].ToString();
     }
     public void SetImage(string txt, Image img)
     {

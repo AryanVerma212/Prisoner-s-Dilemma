@@ -40,16 +40,16 @@ public class ScreenManager : MonoBehaviour
     }
     public void HowToPlay()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene("HowToPlay");
     }
     public void Play()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Round");
     }
     
     public void Instruction()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene("GameComponents");
     }
 
     public void Exit()

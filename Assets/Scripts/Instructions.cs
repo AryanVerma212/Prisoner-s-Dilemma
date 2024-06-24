@@ -38,11 +38,12 @@ public class Instructions : MonoBehaviour
     public void OnContinuePressed()
     {
         //btn2.SetActive(true);
-        panels[clicked-1].SetActive(false);
-        panels[clicked].SetActive(true);
-        Debug.Log(clicked);
-        if(clicked < panels.Length - 1) 
+        
+        if (clicked < panels.Length) 
         {
+            panels[clicked - 1].SetActive(false);
+            panels[clicked].SetActive(true);
+            Debug.Log(clicked);
             clicked++;
         }        
     }
@@ -53,10 +54,12 @@ public class Instructions : MonoBehaviour
             SceneManager.LoadScene("GameStart");
         }
         else if (clicked > 1) 
-        { 
+        {
+            Debug.Log(clicked - 1);
             panels[clicked - 1].SetActive(false);
+            Debug.Log(clicked - 2);
             panels[clicked - 2].SetActive(true);
-            Debug.Log("clicked back");
+            
             clicked--;
         }
     }
