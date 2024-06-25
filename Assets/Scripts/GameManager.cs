@@ -51,10 +51,14 @@ public class GameManager : MonoBehaviour{
                                                                 IRR,FLD,SYR,RH,MZP,GR,CNL,SYR,IRR,GR,RH,FLD});
     public static Set set2 = new Set(Himachal, Karnataka, new Card[]{GR,IRR,SYR,ICE,RH,SYR,ICE,CNL,IRR,MZP,RH,GR,
                                                                     MZP,GR,CNL,IRR,CNL,ICE,RH,MZP,RH,SYR,MZP,IRR});
+    public static Set set3 = new Set(Kerala, Punjab, new Card[]{GR,IRR,SYR,ICE,RH,SYR,ICE,CNL,IRR,MZP,RH,GR,
+                                                                    MZP,GR,CNL,IRR,CNL,ICE,RH,MZP,RH,SYR,MZP,IRR});
+    public static Set set4 = new Set(Karnataka, Himachal, new Card[]{GR,IRR,SYR,ICE,RH,SYR,ICE,CNL,IRR,MZP,RH,GR,
+                                                                    MZP,GR,CNL,IRR,CNL,ICE,RH,MZP,RH,SYR,MZP,IRR});
 
     //public static Set set3 = new Set(Kerala, Assam, new Card[]{RH,SYR,MZP,IRR,FLD,GR,CNL}, new Card[]{IRR,GR,CNL,SYR,RH,MZP,FLD});
 
-    public static Set[] sets = {set1, set2};
+    public static Set[] sets = {set1, set2, set3, set4};
     public static Set currentSet;
     public static Card[] cards;
     public static Region player1Region;

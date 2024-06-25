@@ -85,7 +85,7 @@ public class Round : MonoBehaviour
             //roundCompleted = true;
             //GameManager.roundNumber++;
             GameManager.choices=choices;
-            SceneManager.LoadScene("RoundEnd");
+            SceneManager.LoadScene("ShowData");
             return;
         }
         roundNumberText.text = "Round " + roundNumber;
