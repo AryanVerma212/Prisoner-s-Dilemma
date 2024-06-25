@@ -81,8 +81,28 @@ public class ShowData : MonoBehaviour
 
     public TextMeshProUGUI infraEffP1R4;
     public TextMeshProUGUI infraEffP2R4;
+
+    //Infra Built
+    public TextMeshProUGUI InfraBuiltP1R1;
+    public TextMeshProUGUI InfraBuiltP2R1;
+
+    public TextMeshProUGUI InfraBuiltP1R2;
+    public TextMeshProUGUI InfraBuiltP2R2;
+
+    public TextMeshProUGUI InfraBuiltP1R3;
+    public TextMeshProUGUI InfraBuiltP2R3;
+
+    public TextMeshProUGUI InfraBuiltP1R4;
+    public TextMeshProUGUI InfraBuiltP2R4;
+
+    private int RoundNumber;
+    private int[,] choices;
+
     void Start()
     {
+        choices = GameManager.choices;
+        RoundNumber = GameManager.roundNumber;
+        CalculateStuff();
         roundNumber.text = "Round " + GameManager.roundNumber + " Completed";
         cards = GameManager.currentRoundCards;
         card1Name.text = cards[0].name;
@@ -103,7 +123,7 @@ public class ShowData : MonoBehaviour
         SetImage(GameManager.choices[3, 1] == 1 ? "COOPERATE" : "DEFECT", card4Player2Image);
 
         waterResult1Player1.text = GameManager.currentRoundWater[0, 0].ToString();
-        waterResult1Player2.text = GameManager.currentRoundWater[0,1].ToString();
+        waterResult1Player2.text = GameManager.currentRoundWater[0, 1].ToString();
         waterResult2Player1.text = GameManager.currentRoundWater[1, 0].ToString();
         waterResult2Player2.text = GameManager.currentRoundWater[1, 1].ToString();
         waterResult3Player1.text = GameManager.currentRoundWater[2, 0].ToString();
@@ -112,7 +132,7 @@ public class ShowData : MonoBehaviour
         waterResult4Player2.text = GameManager.currentRoundWater[3, 1].ToString();
 
         infraResult1Player1.text = GameManager.currentRoundInfra[0, 0].ToString();
-        infraResult1Player2.text = GameManager.currentRoundInfra[0,1].ToString();
+        infraResult1Player2.text = GameManager.currentRoundInfra[0, 1].ToString();
         infraResult2Player1.text = GameManager.currentRoundInfra[1, 0].ToString();
         infraResult2Player2.text = GameManager.currentRoundInfra[1, 1].ToString();
         infraResult3Player1.text = GameManager.currentRoundInfra[2, 0].ToString();
@@ -160,6 +180,96 @@ public class ShowData : MonoBehaviour
         infraEffP2R3.text = GameManager.player2Region.weights[GameManager.currentRoundCards[2].id].ToString();
         infraEffP1R4.text = GameManager.player1Region.weights[GameManager.currentRoundCards[3].id].ToString();
         infraEffP2R4.text = GameManager.player2Region.weights[GameManager.currentRoundCards[3].id].ToString();
+
+        // Setting Infra Built
+        SetInfraBuilt(
+            GameManager.choices[0, 0] == 1 ? "COOPERATE" : "DEFECT",
+            GameManager.choices[0, 1] == 1 ? "COOPERATE" : "DEFECT",
+            InfraBuiltP1R1,
+            InfraBuiltP2R1
+            );
+        SetInfraBuilt(
+            GameManager.choices[1, 0] == 1 ? "COOPERATE" : "DEFECT",
+            GameManager.choices[1, 1] == 1 ? "COOPERATE" : "DEFECT",
+            InfraBuiltP1R2,
+            InfraBuiltP2R2
+            );
+        SetInfraBuilt(
+            GameManager.choices[2, 0] == 1 ? "COOPERATE" : "DEFECT",
+            GameManager.choices[2, 1] == 1 ? "COOPERATE" : "DEFECT",
+            InfraBuiltP1R3,
+            InfraBuiltP2R3
+            );
+        SetInfraBuilt(
+            GameManager.choices[3, 0] == 1 ? "COOPERATE" : "DEFECT",
+            GameManager.choices[3, 1] == 1 ? "COOPERATE" : "DEFECT",
+            InfraBuiltP1R4,
+            InfraBuiltP2R4
+            );
+    }
+    private void CalculateStuff()
+    {
+        Card[] cards = new Card[4];
+        for (int i = 0; i < 4; i++)
+            cards[i] = GameManager.cards[(RoundNumber - 1) * 4 + i];
+        int player1Water = 0, player2Water = 0;
+        int player1Infra = 0, player2Infra = 0;
+        int[,] currentRoundWater = new int[4, 2];
+        int[,] currentRoundInfra = new int[4, 2];
+        for (int i = 0; i < 4; i++)
+        {
+            int player1Weight = GameManager.player1Region.weights[cards[i].id];
+            int player2Weight = GameManager.player2Region.weights[cards[i].id];
+            if (choices[i, 0] == 1 && choices[i, 1] == 1)
+            {
+                currentRoundWater[i, 0] = 10;
+                currentRoundWater[i, 1] = 10;
+                currentRoundInfra[i, 0] = player1Weight;
+                currentRoundInfra[i, 1] = player2Weight;
+            }
+            else if (choices[i, 0] == 1 && choices[i, 1] == -1)
+            {
+                currentRoundWater[i, 0] = 0;
+                currentRoundWater[i, 1] = 20;
+                currentRoundInfra[i, 0] = 2 * player1Weight;
+                currentRoundInfra[i, 1] = 0;
+            }
+            else if (choices[i, 0] == -1 && choices[i, 1] == 1)
+            {
+                currentRoundWater[i, 0] = 20;
+                currentRoundWater[i, 1] = 0;
+                currentRoundInfra[i, 0] = 0;
+                currentRoundInfra[i, 1] = 2 * player2Weight;
+            }
+            else if (choices[i, 0] == -1 && choices[i, 1] == -1)
+            {
+                currentRoundWater[i, 0] = 5;
+                currentRoundWater[i, 1] = 5;
+                currentRoundInfra[i, 0] = 0;
+                currentRoundInfra[i, 1] = 0;
+
+            }
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            player1Water += currentRoundWater[i, 0];
+            player2Water += currentRoundWater[i, 1];
+            player1Infra += currentRoundInfra[i, 0];
+            player2Infra += currentRoundInfra[i, 1];
+        }
+        GameManager.player1Score += player1Water;
+        GameManager.player2Score += player2Water;
+        GameManager.player1Groundwater -= player1Water;
+        GameManager.player2Groundwater -= player2Water;
+        GameManager.player1Infra += player1Infra;
+        GameManager.player2Infra += player2Infra;
+        GameManager.currentRoundWater = currentRoundWater;
+        GameManager.currentRoundInfra = currentRoundInfra;
+
+        if (GameManager.player1Groundwater < 0 || GameManager.player2Groundwater < 0)
+        {
+            SceneManager.LoadScene("ZeroGW");
+        }
     }
     public void SetImage(string txt, Image img)
     {
@@ -170,6 +280,29 @@ public class ShowData : MonoBehaviour
         else
         {
             img.sprite = defect;
+        }
+    }
+    void SetInfraBuilt(string txtP1,string txtP2 ,TextMeshProUGUI UItxtP1, TextMeshProUGUI UItxtP2)
+    {
+        if (txtP1 == "COOPERATE" && txtP2 == "COOPERATE")
+        {
+            UItxtP1.text = "1";
+            UItxtP2.text = "1";
+        }
+        else if (txtP1 == "COOPERATE" && txtP2 == "DEFECT")
+        {
+            UItxtP1.text = "2";
+            UItxtP2.text = "0";
+        }
+        else if(txtP1 == "DEFECT" && txtP2 == "COOPERATE")
+        {
+            UItxtP1.text = "0";
+            UItxtP2.text = "2";
+        }
+        else if(txtP1 == "DEFECT" && txtP2 == "DEFECT")
+        {
+            UItxtP1.text = "0";
+            UItxtP2.text = "0";
         }
     }
     public void Next(){

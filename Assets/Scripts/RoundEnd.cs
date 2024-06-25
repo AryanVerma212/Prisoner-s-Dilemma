@@ -28,6 +28,7 @@ public class RoundEnd : MonoBehaviour
         player2Infra.text = GameManager.player2Infra.ToString();
         player1Groundwater.text = GameManager.player1Groundwater.ToString();
         player2Groundwater.text = GameManager.player2Groundwater.ToString();
+        SceneManager.LoadScene("ShowData");
     }
     private void CalculateStuff(){
         Card[] cards=new Card[4];
