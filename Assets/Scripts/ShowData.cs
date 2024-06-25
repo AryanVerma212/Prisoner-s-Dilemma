@@ -123,7 +123,7 @@ public class ShowData : MonoBehaviour
         SetImage(GameManager.choices[3, 1] == 1 ? "COOPERATE" : "DEFECT", card4Player2Image);
 
         waterResult1Player1.text = GameManager.currentRoundWater[0, 0].ToString();
-        waterResult1Player2.text = GameManager.currentRoundWater[0,1].ToString();
+        waterResult1Player2.text = GameManager.currentRoundWater[0, 1].ToString();
         waterResult2Player1.text = GameManager.currentRoundWater[1, 0].ToString();
         waterResult2Player2.text = GameManager.currentRoundWater[1, 1].ToString();
         waterResult3Player1.text = GameManager.currentRoundWater[2, 0].ToString();
@@ -132,7 +132,7 @@ public class ShowData : MonoBehaviour
         waterResult4Player2.text = GameManager.currentRoundWater[3, 1].ToString();
 
         infraResult1Player1.text = GameManager.currentRoundInfra[0, 0].ToString();
-        infraResult1Player2.text = GameManager.currentRoundInfra[0,1].ToString();
+        infraResult1Player2.text = GameManager.currentRoundInfra[0, 1].ToString();
         infraResult2Player1.text = GameManager.currentRoundInfra[1, 0].ToString();
         infraResult2Player2.text = GameManager.currentRoundInfra[1, 1].ToString();
         infraResult3Player1.text = GameManager.currentRoundInfra[2, 0].ToString();
@@ -291,13 +291,13 @@ public class ShowData : MonoBehaviour
         }
         else if (txtP1 == "COOPERATE" && txtP2 == "DEFECT")
         {
-            UItxtP1.text = "0";
-            UItxtP2.text = "2";
+            UItxtP1.text = "2";
+            UItxtP2.text = "0";
         }
         else if(txtP1 == "DEFECT" && txtP2 == "COOPERATE")
         {
-            UItxtP1.text = "2";
-            UItxtP2.text = "0";
+            UItxtP1.text = "0";
+            UItxtP2.text = "2";
         }
         else if(txtP1 == "DEFECT" && txtP2 == "DEFECT")
         {
