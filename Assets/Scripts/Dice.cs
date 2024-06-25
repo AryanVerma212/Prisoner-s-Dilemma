@@ -113,6 +113,10 @@ public class Dice : MonoBehaviour
         if(GameManager.roundNumber==GameManager.totalRounds){
             SceneManager.LoadScene("GameOver");
         }
+        else if(GameManager.player1Groundwater<=0 || GameManager.player2Groundwater <= 0)
+        {
+            SceneManager.LoadScene("ZeroGW");
+        }
         else{
             GameManager.roundNumber++;
             SceneManager.LoadScene("Round");

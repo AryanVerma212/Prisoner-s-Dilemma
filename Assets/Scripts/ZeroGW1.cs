@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
-public class GameExit : MonoBehaviour
+public class ZeroGW1 : MonoBehaviour
 {
+
     public Canvas Assam;
     public Canvas Karntk;
     public Canvas Himachal;
     void Start()
     {
-        if (GameManager.player1Score > GameManager.player2Score)
+        if (GameManager.player1Groundwater <= 0)
         {
             if (GameManager.player1Region == GameManager.Assam)
             {
@@ -30,7 +32,7 @@ public class GameExit : MonoBehaviour
                 Himachal.gameObject.SetActive(false);
             }
         }
-        else
+        else if (GameManager.player2Groundwater <= 0)
         {
             if (GameManager.player2Region == GameManager.Assam)
             {
@@ -51,8 +53,8 @@ public class GameExit : MonoBehaviour
                 Himachal.gameObject.SetActive(false);
             }
         }
-        
-
-
     }
+
+    // Update is called once per frame
+   
 }

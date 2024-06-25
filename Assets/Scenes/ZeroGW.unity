@@ -1581,8 +1581,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 908149596}
-  - component: {fileID: 908149595}
   - component: {fileID: 908149594}
+  - component: {fileID: 908149597}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -1602,21 +1602,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b47e2b925c87c7b43af19366993a14be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &908149595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908149593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fd9cd1fb5e3ae3468d727b10d7ffd56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Assam: {fileID: 591768950}
-  Karntk: {fileID: 1711145444}
-  Himachal: {fileID: 1270375407}
 --- !u!4 &908149596
 Transform:
   m_ObjectHideFlags: 0
@@ -1632,6 +1617,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &908149597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908149593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32dd100b5a2ee34d85bf04242bd08e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Assam: {fileID: 591768950}
+  Karntk: {fileID: 1711145444}
+  Himachal: {fileID: 1270375407}
 --- !u!1 &1167606249
 GameObject:
   m_ObjectHideFlags: 0
