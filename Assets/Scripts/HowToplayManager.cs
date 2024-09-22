@@ -118,6 +118,7 @@ public class HowToPlayManager : MonoBehaviour
     }
     public void Home()
     {
+        GameManager.home = true;
         SceneManager.LoadScene(0);
     }
 

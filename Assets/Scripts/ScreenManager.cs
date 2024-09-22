@@ -15,7 +15,6 @@ public class ScreenManager : MonoBehaviour
         if(GameManager.home){
             //if the opening titles have already been displayed, skip them
            ShowScene4();
-           //Debug.Log("Home Visited");
            return;
         }
         Screen1.gameObject.SetActive(true);
