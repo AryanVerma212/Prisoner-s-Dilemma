@@ -40,12 +40,12 @@ public class GameManager : MonoBehaviour{
 
 
 
-    public static Region Punjab = new Region(0, "Punjab (Agricultural)", 60, new int[]{2,1,3,3,1,2,1,1,1,3,1,1});
-    public static Region Himachal = new Region(1, "Himachal (Himalayan)", 218, new int[]{2,3,2,1,1,1,1,1,2,2,3,3});
-    public static Region Kerala = new Region(2, "Kerala (Coastal)", 194, new int[]{3,1,2,1,1,3,3,1,1,1,1,1});
-    public static Region Assam = new Region(3, "Assam (Plains)", 812, new int[]{1,2,2,2,1,1,1,2,2,1,1,2});
-    public static Region Karnataka = new Region(4, "Karnataka (Plateau)", 120, new int[]{3,1,3,2,1,2,2,1,1,1,1,1});
-    public static Region Rajasthan = new Region(5, "Rajasthan (Desert)", 66, new int[]{2,1,3,3,3,1,1,1,1,3,1,1});
+    public static Region Punjab = new Region(0, "Punjab (Agricultural)", 244, new int[]{2,1,3,3,1,2,1,1,1,3,1,1});
+    public static Region Himachal = new Region(1, "Himachal (Himalayan)", 886, new int[]{2,3,2,1,1,1,1,1,2,2,3,3});
+    public static Region Kerala = new Region(2, "Kerala (Coastal)", 789, new int[]{3,1,2,1,1,3,3,1,1,1,1,1});
+    public static Region Assam = new Region(3, "Assam (Plains)", 3302, new int[]{1,2,2,2,1,1,1,2,2,1,1,2});
+    public static Region Karnataka = new Region(4, "Karnataka (Plateau)", 488, new int[]{3,1,3,2,1,2,2,1,1,1,1,1});
+    public static Region Rajasthan = new Region(5, "Rajasthan (Desert)", 268, new int[]{2,1,3,3,3,1,1,1,1,3,1,1});
 
     public static Set set1 = new Set(Punjab, Kerala, new Card[]{CNL,SYR,FLD,MZP,RH,FLD,IRR,CNL,GR,MZP,CNL,SYR,
                                                                 IRR,FLD,SYR,RH,MZP,GR,CNL,SYR,IRR,GR,RH,FLD});

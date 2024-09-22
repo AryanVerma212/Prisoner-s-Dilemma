@@ -6,6 +6,7 @@ public class GameStart : MonoBehaviour
     void Start(){
         System.Random random = new System.Random();
         int randomSet = random.Next(0, GameManager.sets.Length);
+        Debug.Log("Chosen Set: "+randomSet);
         GameManager.currentSet = GameManager.sets[randomSet];
         Shuffle(GameManager.currentSet.Cards);
         GameManager.cards = GameManager.currentSet.Cards;

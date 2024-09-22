@@ -60,8 +60,8 @@ public class RoundEnd : MonoBehaviour
                 currentRoundInfra[i,1]=2*player2Weight;
             }
             else if(choices[i,0]==-1 && choices[i,1]==-1){
-                currentRoundWater[i,0]=5;
-                currentRoundWater[i,1]=5;
+                currentRoundWater[i,0]=10;
+                currentRoundWater[i,1]=10;
                 currentRoundInfra[i,0]=0;
                 currentRoundInfra[i,1]=0;
                 

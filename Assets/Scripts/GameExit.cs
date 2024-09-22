@@ -4,55 +4,31 @@ using UnityEngine;
 
 public class GameExit : MonoBehaviour
 {
-    public Canvas Assam;
-    public Canvas Karntk;
+    public Canvas Punjab;
+    public Canvas Karnataka;
     public Canvas Himachal;
+    public Canvas Kerala;
     void Start()
     {
-        if (GameManager.player1Score > GameManager.player2Score)
-        {
-            if (GameManager.player1Region == GameManager.Assam)
-            {
-                Assam.gameObject.SetActive(true);
-                Karntk.gameObject.SetActive(false);
-                Himachal.gameObject.SetActive(false);
-            }
-            else if (GameManager.player1Region == GameManager.Karnataka)
-            {
-                Karntk.gameObject.SetActive(true);
-                Assam.gameObject.SetActive(false);
-                Himachal.gameObject.SetActive(false);
-            }
-            else if (GameManager.player1Region == GameManager.Himachal)
-            {
-                Himachal.gameObject.SetActive(true);
-                Karntk.gameObject.SetActive(false);
-                Himachal.gameObject.SetActive(false);
-            }
+        if(GameManager.player1Score>GameManager.player2Score){
+            if(GameManager.player1Region.name=="Punjab")
+                Punjab.enabled=true;
+            else if(GameManager.player1Region.name=="Karnataka")
+                Karnataka.enabled=true;
+            else if(GameManager.player1Region.name=="Himachal")
+                Himachal.enabled=true;
+            else if(GameManager.player1Region.name=="Kerala")
+                Kerala.enabled=true;
         }
-        else
-        {
-            if (GameManager.player2Region == GameManager.Assam)
-            {
-                Assam.gameObject.SetActive(true);
-                Karntk.gameObject.SetActive(false);
-                Himachal.gameObject.SetActive(false);
-            }
-            else if (GameManager.player2Region == GameManager.Karnataka)
-            {
-                Karntk.gameObject.SetActive(true);
-                Assam.gameObject.SetActive(false);
-                Himachal.gameObject.SetActive(false);
-            }
-            else if (GameManager.player2Region == GameManager.Himachal)
-            {
-                Himachal.gameObject.SetActive(true);
-                Karntk.gameObject.SetActive(false);
-                Himachal.gameObject.SetActive(false);
-            }
+        else{
+            if(GameManager.player2Region.name=="Punjab")
+                Punjab.enabled=true;
+            else if(GameManager.player2Region.name=="Karnataka")
+                Karnataka.enabled=true;
+            else if(GameManager.player2Region.name=="Himachal")
+                Himachal.enabled=true;
+            else if(GameManager.player2Region.name=="Kerala")
+                Kerala.enabled=true;
         }
-        
-
-
     }
 }
