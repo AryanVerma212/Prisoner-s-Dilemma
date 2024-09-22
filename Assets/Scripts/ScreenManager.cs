@@ -12,6 +12,12 @@ public class ScreenManager : MonoBehaviour
     public Canvas Screen4;
     void Start()
     {
+        if(GameManager.home){
+            //if the opening titles have already been displayed, skip them
+           ShowScene4();
+           //Debug.Log("Home Visited");
+           return;
+        }
         Screen1.gameObject.SetActive(true);
         Screen2.gameObject.SetActive(false);
         Screen3.gameObject.SetActive(false);

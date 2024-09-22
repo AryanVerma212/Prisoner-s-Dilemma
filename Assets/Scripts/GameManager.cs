@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour{
     public static int player2Score = initialScore;
     public static int player1Infra = 0;
     public static int player2Infra = 0;
-
+    public static bool home = false;
 
     public static Card RH=new Card(0, "Rooftop Rainwater Harvesting","Your Roof, Your Water Source",
                                         "Turn your rooftop into a mini water reservoir! This technique collects rainwater from your roof and stores it in tanks for later use. Think of it like a personal rainwater barrel, providing a sustainable water source.");

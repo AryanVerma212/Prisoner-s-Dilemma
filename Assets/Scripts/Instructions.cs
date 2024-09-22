@@ -28,6 +28,7 @@ public class Instructions : MonoBehaviour
 
     public void LoadMainScreen()
     {
+        GameManager.home = true;
         SceneManager.LoadScene("GameStart");
     }
     
