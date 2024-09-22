@@ -1,57 +1,25 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ZeroGW1 : MonoBehaviour
 {
-
-    public Canvas Assam;
-    public Canvas Karntk;
-    public Canvas Himachal;
+    public Canvas Karnataka;
+    public Canvas Punjab;
     void Start()
     {
-        if (GameManager.player1Groundwater <= 0)
-        {
-            if (GameManager.player1Region == GameManager.Assam)
-            {
-                Assam.gameObject.SetActive(true);
-                Karntk.gameObject.SetActive(false);
-                Himachal.gameObject.SetActive(false);
-            }
-            else if (GameManager.player1Region == GameManager.Karnataka)
-            {
-                Karntk.gameObject.SetActive(true);
-                Assam.gameObject.SetActive(false);
-                Himachal.gameObject.SetActive(false);
-            }
-            else if (GameManager.player1Region == GameManager.Himachal)
-            {
-                Himachal.gameObject.SetActive(true);
-                Karntk.gameObject.SetActive(false);
-                Himachal.gameObject.SetActive(false);
-            }
-        }
-        else if (GameManager.player2Groundwater <= 0)
-        {
-            if (GameManager.player2Region == GameManager.Assam)
-            {
-                Assam.gameObject.SetActive(true);
-                Karntk.gameObject.SetActive(false);
-                Himachal.gameObject.SetActive(false);
-            }
-            else if (GameManager.player2Region == GameManager.Karnataka)
-            {
-                Karntk.gameObject.SetActive(true);
-                Assam.gameObject.SetActive(false);
-                Himachal.gameObject.SetActive(false);
-            }
-            else if (GameManager.player2Region == GameManager.Himachal)
-            {
-                Himachal.gameObject.SetActive(true);
-                Karntk.gameObject.SetActive(false);
-                Himachal.gameObject.SetActive(false);
-            }
-        }
+        Karnataka.gameObject.SetActive(false);
+        Punjab.gameObject.SetActive(false);
+        if(GameManager.player1Groundwater<=0 && GameManager.player1Region.name=="Karnataka (Plateau)")
+            Karnataka.gameObject.SetActive(true);
+        if(GameManager.player2Groundwater<=0 && GameManager.player2Region.name=="Karnataka (Plateau)")
+            Karnataka.gameObject.SetActive(true);
+        if(GameManager.player1Groundwater<=0 && GameManager.player1Region.name=="Punjab (Agricultural)")
+            Punjab.gameObject.SetActive(true);
+        if(GameManager.player2Groundwater<=0 && GameManager.player2Region.name=="Punjab (Agricultural)")
+            Punjab.gameObject.SetActive(true);
     }
-
-    // Update is called once per frame
+    public void Finish(){
+        SceneManager.LoadScene("GameOver");
+    }
    
 }

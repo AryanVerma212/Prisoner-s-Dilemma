@@ -266,10 +266,10 @@ public class ShowData : MonoBehaviour
         GameManager.currentRoundWater = currentRoundWater;
         GameManager.currentRoundInfra = currentRoundInfra;
 
-        if (GameManager.player1Groundwater < 0 || GameManager.player2Groundwater < 0)
-        {
-            SceneManager.LoadScene("ZeroGW");
-        }
+        // if (GameManager.player1Groundwater < 0 || GameManager.player2Groundwater < 0)
+        // {
+        //     SceneManager.LoadScene("ZeroGW");
+        // }
     }
     public void SetImage(string txt, Image img)
     {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,25 +11,30 @@ public class GameExit : MonoBehaviour
     public Canvas Kerala;
     void Start()
     {
-        if(GameManager.player1Score>GameManager.player2Score){
-            if(GameManager.player1Region.name=="Punjab")
-                Punjab.enabled=true;
-            else if(GameManager.player1Region.name=="Karnataka")
-                Karnataka.enabled=true;
-            else if(GameManager.player1Region.name=="Himachal")
-                Himachal.enabled=true;
-            else if(GameManager.player1Region.name=="Kerala")
-                Kerala.enabled=true;
+        String winner;
+        if(GameManager.player1Groundwater<=0) winner = GameManager.player2Region.name;
+        else if(GameManager.player2Groundwater<=0) winner = GameManager.player1Region.name;
+        else if(GameManager.player1Score>GameManager.player2Score) winner = GameManager.player1Region.name;
+        else if(GameManager.player1Score<GameManager.player2Score) winner = GameManager.player2Region.name;
+        else winner = "Draw";
+
+        switch(winner){
+            case "Punjab (Agricultural)":
+                Punjab.gameObject.SetActive(true);
+                break;
+            case "Karnataka (Plateau)":
+                Karnataka.gameObject.SetActive(true);
+                break;
+            case "Himachal (Himalayan)":
+                Himachal.gameObject.SetActive(true);
+                break;
+            case "Kerala (Coastal)":
+                Kerala.gameObject.SetActive(true);
+                break;
         }
-        else{
-            if(GameManager.player2Region.name=="Punjab")
-                Punjab.enabled=true;
-            else if(GameManager.player2Region.name=="Karnataka")
-                Karnataka.enabled=true;
-            else if(GameManager.player2Region.name=="Himachal")
-                Himachal.enabled=true;
-            else if(GameManager.player2Region.name=="Kerala")
-                Kerala.enabled=true;
-        }
+    }
+
+    public void QuitGame(){
+        Application.Quit();
     }
 }

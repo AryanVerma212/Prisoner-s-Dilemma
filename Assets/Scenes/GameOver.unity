@@ -441,9 +441,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1407803900}
-        m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
-        m_MethodName: exit
+      - m_Target: {fileID: 1407803901}
+        m_TargetAssemblyTypeName: GameExit, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1733,9 +1733,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1407803900}
-        m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
-        m_MethodName: exit
+      - m_Target: {fileID: 1407803901}
+        m_TargetAssemblyTypeName: GameExit, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1865,9 +1865,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1407803900}
-        m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
-        m_MethodName: exit
+      - m_Target: {fileID: 1407803901}
+        m_TargetAssemblyTypeName: GameExit, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2133,7 +2133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1407803902}
   - component: {fileID: 1407803901}
-  - component: {fileID: 1407803900}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -2141,18 +2140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1407803900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1407803899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b47e2b925c87c7b43af19366993a14be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1407803901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2716,9 +2703,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1407803900}
-        m_TargetAssemblyTypeName: ExitButton, Assembly-CSharp
-        m_MethodName: exit
+      - m_Target: {fileID: 1407803901}
+        m_TargetAssemblyTypeName: GameExit, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
