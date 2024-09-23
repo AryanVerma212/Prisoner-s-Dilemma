@@ -3655,12 +3655,12 @@ MonoBehaviour:
   RegionalCard1: {fileID: 786190445}
   RegionalCard2: {fileID: 783501582}
   RegionalCards:
-  - {fileID: 21300000, guid: 0ce2333971c474948ae4db1ca8632905, type: 3}
-  - {fileID: 21300000, guid: cb2bd4a17ff94a943b1f602d816519c4, type: 3}
-  - {fileID: 21300000, guid: 2b1c100610aab664dae79576e26031e4, type: 3}
+  - {fileID: 21300000, guid: edf5f24c90a13ce4b81ba9c01d366a2d, type: 3}
+  - {fileID: 21300000, guid: d631ec6bb8888d7459c1565874849f10, type: 3}
+  - {fileID: 21300000, guid: 203d2556eb9165a4297482e75d2f2eb8, type: 3}
   - {fileID: 21300000, guid: f25fa83833112c7449ce159d53d9bdf2, type: 3}
-  - {fileID: 21300000, guid: 3a4a28e19ca438d4ca055acc3d3cb17e, type: 3}
-  - {fileID: 21300000, guid: 9e0bc0676b4d8ea478d9b77195261352, type: 3}
+  - {fileID: 21300000, guid: 60303ba62ec79fd4591e91a8b1b6ef02, type: 3}
+  - {fileID: 21300000, guid: 7214bd8f65bfc7c4d9e9c2ca6c28ef13, type: 3}
   cooperateButton: {fileID: 2012728906}
   defectButton: {fileID: 1202490243}
 --- !u!1 &2093058373
