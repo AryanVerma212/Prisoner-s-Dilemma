@@ -504,9 +504,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32dd100b5a2ee34d85bf04242bd08e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Assam: {fileID: 0}
-  Karntk: {fileID: 1270375407}
-  Himachal: {fileID: 62435317}
+  Karnataka: {fileID: 1270375407}
+  Punjab: {fileID: 62435317}
 --- !u!1 &1167606249
 GameObject:
   m_ObjectHideFlags: 0

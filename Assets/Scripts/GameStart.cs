@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 public class GameStart : MonoBehaviour
 {
     void Start(){
-        System.Random random = new System.Random();
 
+        System.Random random = new System.Random();
         if(GameManager.SetManager == -1)
             GameManager.SetManager = random.Next(0, 2);
         else
@@ -14,7 +14,7 @@ public class GameStart : MonoBehaviour
         int randomSet = random.Next(offset, 2+offset);
         Debug.Log("Chosen Set: "+randomSet);
         GameManager.currentSet = GameManager.sets[randomSet];
-        Shuffle(GameManager.currentSet.Cards);
+        ShuffleInParts(GameManager.currentSet.Cards, 4);
         GameManager.cards = GameManager.currentSet.Cards;
         GameManager.player1Region = GameManager.currentSet.player1Region;
         GameManager.player2Region = GameManager.currentSet.player2Region;
@@ -32,8 +32,7 @@ public class GameStart : MonoBehaviour
         Application.Quit();
     }
     // Fisher-Yates shuffle algorithm for the cards
-    public void Shuffle(Card[] cards){
-        System.Random random = new System.Random();
+    public void Shuffle(Card[] cards, System.Random random){
         for (int i = cards.Length - 1; i > 0; i--){
             int j = random.Next(0, i + 1);
             Card temp = cards[i];
@@ -42,6 +41,18 @@ public class GameStart : MonoBehaviour
         }
     }
     
+    public void ShuffleInParts(Card[] array, int partSize)
+    {
+        System.Random random = new System.Random();
+        for (int i = 0; i < array.Length; i += partSize)
+        {
+            int end = Math.Min(i + partSize, array.Length);
+            Card[] subArray = new Card[end - i];
+            Array.Copy(array, i, subArray, 0, end - i);
+            Shuffle(subArray, random);
+            Array.Copy(subArray, 0, array, i, end - i);
+        }
+    }
     
     
 }
