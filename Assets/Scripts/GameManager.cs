@@ -1,7 +1,7 @@
 using UnityEngine;
-using System;
 
 public class GameManager : MonoBehaviour{
+    public static int SetManager = -1; //to ensure alternate sets
     public static int roundNumber = 1;
     public static int totalRounds = 6;
     public static int initialScore = 200;

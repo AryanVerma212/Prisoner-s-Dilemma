@@ -1,7 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameExit : MonoBehaviour
 {
@@ -35,6 +34,6 @@ public class GameExit : MonoBehaviour
     }
 
     public void QuitGame(){
-        Application.Quit();
+        SceneManager.LoadScene("GameStart");
     }
 }

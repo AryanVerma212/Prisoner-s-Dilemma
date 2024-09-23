@@ -5,7 +5,13 @@ public class GameStart : MonoBehaviour
 {
     void Start(){
         System.Random random = new System.Random();
-        int randomSet = random.Next(0, GameManager.sets.Length);
+
+        if(GameManager.SetManager == -1)
+            GameManager.SetManager = random.Next(0, 2);
+        else
+            GameManager.SetManager = 1-GameManager.SetManager;
+            int offset = GameManager.SetManager*2;
+        int randomSet = random.Next(offset, 2+offset);
         Debug.Log("Chosen Set: "+randomSet);
         GameManager.currentSet = GameManager.sets[randomSet];
         Shuffle(GameManager.currentSet.Cards);
