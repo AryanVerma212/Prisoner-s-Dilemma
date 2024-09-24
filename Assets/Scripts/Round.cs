@@ -90,7 +90,8 @@ public class Round : MonoBehaviour
         }
         roundNumberText.text = "Round " + roundNumber;
         cardNumberText.text = "Card " +roundNumber+"."+ (cardNumber + 1);
-        CardPanelImage.sprite = CardSprites[cardNumber];
+        CardPanelImage.sprite = CardSprites[GameManager.currentRoundCards[cardNumber].id];
+        Debug.Log(GameManager.currentRoundCards[cardNumber].id + " "+ GameManager.currentRoundCards[cardNumber].name);
         player1Region.text = GameManager.player1Region.name.Split(' ')[0];
         player2Region.text = GameManager.player2Region.name.Split(' ')[0];
         if (playerTurn == 1)
