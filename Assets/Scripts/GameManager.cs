@@ -49,9 +49,9 @@ public class GameManager : MonoBehaviour{
 
     public static Set set1 = new Set(Punjab, Kerala, new Card[]{CNL,SYR,FLD,MZP,RH,FLD,IRR,CNL,GR,MZP,CNL,SYR,
                                                                 IRR,FLD,SYR,RH,MZP,GR,CNL,SYR,IRR,GR,RH,FLD});
-    public static Set set2 = new Set(Himachal, Karnataka, new Card[]{GR,IRR,SYR,ICE,RH,SYR,ICE,CNL,IRR,MZP,RH,GR,
+    public static Set set2 = new Set(Kerala, Punjab, new Card[]{GR,IRR,SYR,ICE,RH,SYR,ICE,CNL,IRR,MZP,RH,GR,
                                                                     MZP,GR,CNL,IRR,CNL,ICE,RH,MZP,RH,SYR,MZP,IRR});
-    public static Set set3 = new Set(Kerala, Punjab, new Card[]{GR,IRR,SYR,ICE,RH,SYR,ICE,CNL,IRR,MZP,RH,GR,
+    public static Set set3 = new Set(Himachal, Karnataka, new Card[]{GR,IRR,SYR,ICE,RH,SYR,ICE,CNL,IRR,MZP,RH,GR,
                                                                     MZP,GR,CNL,IRR,CNL,ICE,RH,MZP,RH,SYR,MZP,IRR});
     public static Set set4 = new Set(Karnataka, Himachal, new Card[]{GR,IRR,SYR,ICE,RH,SYR,ICE,CNL,IRR,MZP,RH,GR,
                                                                     MZP,GR,CNL,IRR,CNL,ICE,RH,MZP,RH,SYR,MZP,IRR});

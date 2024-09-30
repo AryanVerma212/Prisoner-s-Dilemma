@@ -5,12 +5,19 @@ public class GameStart : MonoBehaviour
 {
     void Start(){
 
+        GameManager.roundNumber = 1;
+        GameManager.player1Infra = 0;
+        GameManager.player2Infra = 0;
+        GameManager.player1Score = GameManager.initialScore;
+        GameManager.player2Score = GameManager.initialScore;
+
+        
         System.Random random = new System.Random();
         if(GameManager.SetManager == -1)
             GameManager.SetManager = random.Next(0, 2);
         else
             GameManager.SetManager = 1-GameManager.SetManager;
-            int offset = GameManager.SetManager*2;
+        int offset = GameManager.SetManager*2;
         int randomSet = random.Next(offset, 2+offset);
         Debug.Log("Chosen Set: "+randomSet);
         GameManager.currentSet = GameManager.sets[randomSet];

@@ -76,7 +76,7 @@ public class Dice : MonoBehaviour
         {
             diceOutput.sprite = DiceOutputSprites[n];
         }
-        Debug.Log("Disaster Intensity: " + n);
+        //Debug.Log("Disaster Intensity: " + n);
         
         diceNumber.text = n.ToString();
         P1Region.text = GameManager.player1Region.name.Split(" ")[0];
